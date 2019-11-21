@@ -1,0 +1,25 @@
+1. How to run program
+(1) command "make" to compile program
+(2) on the host host1: command "./nEmulator-linux386
+                                <emulator's receiving UDP port number in the forward (sender) direction>
+                                <receiver's network address>
+                                <receiver's receiving UDP port number>
+                                <emulator's receiving UDP port number in the backward (receiver) direction>
+                                <sender's network address>
+                                <sender's receiving UDP port number>
+                                <maximum delay of the link in units of millisecond>
+                                <packet discard probability>
+                                <verbose-mode>"
+(3) on the host host2: command "java receiver <hostname for the network emulator>
+                                              <UDP port number used by the link emulator to receive ACKs from the receiver>
+                                              <UDP port number used by the receiver to receive data from the emulator>
+                                              <name of the file into which the received data is written>"
+(4) on the host host3: command "java sender <host address of the network emulator>
+                                            <UDP port number used by the emulator to receive data from the sender>
+                                            <UDP port number used by the sender to receive ACKs from the emulator>
+                                            <name of the file to be transferred>"
+
+2. The program is built and tested on linux.student.cs.uwaterloo.ca, it should be tested on three different machines, 
+   and must use command IN ORDER.
+
+3. The program is written by JAVA.
